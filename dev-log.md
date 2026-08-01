@@ -2,7 +2,7 @@
 
 ## 计划
 
-- [ ] 任务 3 比对`practice1.md`和 Gmail 原文设计`quick-view.md`
+- [ ] 任务 3 比对`practice1.md`和 Github 原文设计`quick-view.md`
 - [ ] 建立`README.md`
 - [ ] 吃透 2 项目透视
 - [ ] 合并开发流
