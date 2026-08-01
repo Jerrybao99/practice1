@@ -25,7 +25,7 @@ prompt 2：从数据工程日志（journal）中，整理数据工程意图（in
   4. 找寻与`data/jorunal`和`data/intention`下全部文件密切相关的仓库`qtcloud-data-main`与`qtdata-main`中的代码文件
   5. 整合凝练上述步骤提取到的关键信息作为下述步骤的上下文
 2. 输出名为`qtcloud-data-transfer.md`和`qtdata-transfer.md`于 zed 编辑器打开的项目根目录中，对该文档内容有如下要求：
-  1. 严格参考`quanttide-data`现有工作意图文档`data/intention`下的文件格式
+  1. 严格参考`quanttide-data`现有工作意图文档`data/intention`下的`transfer.md`文件格式
   2. 内容严格参考构建的上下文
   3. 只输出本项目未来的工作意图，不包含过去的工作意图
   4. 紧扣最终目标：描绘量潮为什么想要建设这样一个数据工程，第二大脑
