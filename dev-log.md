@@ -5,6 +5,7 @@
 - [ ] 任务 3 比对`practice1.md`和 Github 原文设计`quick-view.md`
 - [ ] 建立`README.md`
 - [ ] 吃透 2 项目透视
+- [ ] 参考资料消化
 - [ ] 合并开发流
 
 ### PR
