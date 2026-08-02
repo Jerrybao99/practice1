@@ -1,0 +1,105 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "cli/v*"
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/cli
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify tag matches Cargo.toml version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#cli/v}"
+          CARGO_VERSION="$(grep -m1 '^version' Cargo.toml | sed 's/.*= *"\(.*\)"/\1/')"
+          if [ "$TAG_VERSION" != "$CARGO_VERSION" ]; then
+            echo "::error::tag $GITHUB_REF_NAME != Cargo.toml version $CARGO_VERSION"
+            exit 1
+          fi
+
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          components: rustfmt, clippy
+          cache: true
+
+      - name: Build
+        run: cargo build
+
+      - name: Test
+        run: cargo test
+
+      - name: Clippy
+        run: cargo clippy -- -A warnings
+
+      - name: Format
+        run: cargo fmt --check
+
+  publish-crate:
+    needs: check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/cli
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Publish qtcloud-data-cli
+        run: cargo publish --token ${{ secrets.CRATES_API_TOKEN }}
+
+  build-binary:
+    needs: check
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            archive: tar.gz
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            archive: zip
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: src/cli
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: ${{ matrix.target }}
+          cache: true
+
+      - name: Build binary
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Package
+        run: |
+          cd target/${{ matrix.target }}/release
+          if [ "${{ matrix.archive }}" = "tar.gz" ]; then
+            tar czf ../../../qtcloud-data-${{ matrix.target }}.tar.gz qtcloud-data
+          else
+            7z a ../../../qtcloud-data-${{ matrix.target }}.zip qtcloud-data.exe
+          fi
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            src/cli/qtcloud-data-*.tar.gz
+            src/cli/qtcloud-data-*.zip
+          fail_on_unmatched_files: true
