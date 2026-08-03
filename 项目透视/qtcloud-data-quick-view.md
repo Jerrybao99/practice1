@@ -155,7 +155,7 @@ qtcloud-data/                     ← 项目根目录
 7. **环境诊断**（`doctor`）：检查本机 DataOps 环境，包括工具链、目录结构、传输凭证
 8. **版本管理**（`version`）：基于 git 的 Blueprint 版本历史、查看、差异对比
 
-**的核心设计原则**：LLM 只输出 Markdown 表格（非结构化），CLI 代码确定性解析表格生成 YAML/代码。这避免了 LLM 直接生成 CUE/YAML 代码的不可控问题。
+**核心设计原则**：LLM 只输出 Markdown 表格（非结构化），CLI 代码确定性解析表格生成 YAML/代码。这避免了 LLM 直接生成 CUE/YAML 代码的不可控问题。
 
 ## 最小工作流
 
