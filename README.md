@@ -6,30 +6,40 @@
 
 ```
 practice1/
-├── 参考资料/                   ← 量潮 DevOps 与第二大脑章程
-│   ├── release.md              ← 发布管理章程（SemVer、标签、Release 流程）
-│   └── second-brain.md         ← 第二大脑资产图式章程（18 类标准资产、九宫格体系）
-├── 工作意图/                   ← 产品未来意图与工作范围
-│   ├── qtcloud-data-transfer.md ← 数据云数据传输意图
-│   └── qtdata-transfer.md      ← 数据工程数据传输意图
-├── 规范模板/                   ← 文档规范模板（生成透视文档、任务书等的格式约定）
-│   ├── xxx-quick-view.md       ← 项目透视文档模板（300 行内，含概述/知识结构/核心功能/最小工作流）
-│   ├── quick-view.md           ← 透视文档生成指南
-│   ├── taskbook.md             ← 任务书格式模板
-│   ├── transfer.md             ← 数据传输意图文档模板（100 行内）
-│   └── checklist.md            ← 检查清单模板
-├── 目标仓库/                   ← 目标分析仓库（GitHub 源码副本）
-│   ├── qtcloud-data-main/      ← 数据云 CLI + Provider + Studio（Rust/Go/Flutter）
-│   ├── qtdata-main/            ← 数据工程工具链（Rust CLI + Python FastAPI Provider + Flutter Studio）
-│   └── quanttide-data/         ← 聚合入口仓库（24 个子模块，九宫格知识体系）
-├── 项目透视/                   ← 已生成的项目透视文档
+├── 参考资料/                       ← 量潮 DevOps 与第二大脑章程
+│   ├── 副本,md                     ← 数据蓝图理念说明（Catalog + Contract = Blueprint）
+│   ├── second-brain.md             ← 第二大脑资产图式章程（18 类标准资产、九宫格体系）
+│   └── release.md                  ← 发布管理章程（SemVer、标签、Release 流程）
+├── 工作意图/                       ← 产品未来意图与工作范围
+│   ├── qtcloud-data-intention.md   ← 数据云数据传输意图
+│   └── qtdata-intention.md         ← 数据工程数据传输意图
+├── 工作洞察/                       ← 工程经验与设计原则总结
+│   ├── design-philosophy.md        ← 7 条设计原则（边界、命名、目录结构等）
+│   ├── engineering-standards.md    ← 工程标准定位与意义
+│   └── ghtorrent-retrospective.md  ← GHTorrent 蓝图脱敏回顾（三种 Blueprint 格式）
+├── 工作路线/                       ← 路线规划（规划中）
+├── 规范模板/                       ← 文档规范模板（生成透视文档、任务书等的格式约定）
+│   ├── quick-view.md               ← 项目透视文档模板（≤300 行，含概述/知识结构/核心功能/最小工作流）
+│   ├── quick-start.md              ← AI 协作快速入门提示词
+│   ├── taskbook.md                 ← 任务书格式模板
+│   ├── intention.md                ← 意图文档模板（≤50 行）
+│   ├── insight.md                  ← 洞察文档模板（≤80 行）
+│   └── checklist.md                ← 检查清单模板
+├── 分析仓库/                       ← 目标分析仓库（GitHub 源码副本）
+│   ├── qtcloud-data-main/          ← 数据云 CLI + Provider + Studio（Rust/Go/Flutter）
+│   ├── qtdata-main/                ← 数据工程工具链（Rust CLI + Python FastAPI Provider + Flutter Studio）
+│   └── quanttide-data/             ← 聚合入口仓库（24 个子模块，九宫格知识体系）
+├── 项目透视/                       ← 已生成的项目透视文档
 │   ├── quanttide-data-quick-view.md ← quanttide-data 项目透视
 │   ├── qtcloud-data-quick-view.md   ← qtcloud-data 项目透视
 │   └── qtdata-quick-view.md         ← qtdata 项目透视
-├── 任务提交/                   ← 任务交付物暂存区
-├── practice1.md                ← 任务书（任务 3、任务 4、附加题 A3/A4）
-├── dev-log.md                  ← 开发日志（计划、瓶颈、参考资料）
-└── README.md                   ← 本文件
+├── 输出测试/                       ← 测试输出文档
+│   ├── 工作洞察/blueprint-insight.md ← 蓝图洞察测试输出
+│   └── 工作意图/qtdata-intention.md  ← qtdata 意图测试输出
+├── 任务提交/                       ← 任务交付物暂存区
+├── practice1.md                    ← 任务书（任务 3、任务 4、附加题 A3/A4）
+├── dev-log.md                      ← 开发日志（计划、瓶颈、参考资料）
+└── README.md                       ← 本文件
 ```
 
 ## 关键文档
@@ -39,13 +49,17 @@ practice1/
 | `practice1.md` | 任务书 | 开始实操前 |
 | `参考资料/second-brain.md` | 知识体系基础 | 理解项目组织逻辑时 |
 | `参考资料/release.md` | 发布流程规范 | 执行版本发布时 |
-| `规范模板/xxx-quick-view.md` | 透视文档编写规范 | 生成项目透视文档时 |
-| `规范模板/transfer.md` | 意图文档编写规范 | 整理工作意图时 |
+| `参考资料/副本,md` | 数据蓝图理念 | 理解 Catalog + Contract 架构时 |
+| `规范模板/quick-view.md` | 透视文档编写规范 | 生成项目透视文档时 |
+| `规范模板/intention.md` | 意图文档编写规范 | 整理工作意图时 |
+| `规范模板/insight.md` | 洞察文档编写规范 | 撰写工程洞察时 |
+| `工作洞察/design-philosophy.md` | 设计原则 | 理解量潮设计哲学时 |
 | `项目透视/quanttide-data-quick-view.md` | 聚合仓库全貌 | 建立全局认知时 |
 | `项目透视/qtcloud-data-quick-view.md` | 数据云项目透视 | 理解数据云架构时 |
 | `项目透视/qtdata-quick-view.md` | 数据工程项目透视 | 理解数据工程工具链时 |
-| `目标仓库/quanttide-data/AGENTS.md` | AI 工作指南 | 使用 AI 辅助开发时 |
-| `目标仓库/quanttide-data/CONTRIBUTING.md` | 贡献规范 | 提交代码/文档前 |
+| `分析仓库/quanttide-data/AGENTS.md` | AI 工作指南 | 使用 AI 辅助开发时 |
+| `分析仓库/quanttide-data/CONTRIBUTING.md` | 贡献规范 | 提交代码/文档前 |
+| `分析仓库/quanttide-data/STATUS.md` | 子模块状态 | 了解各仓库版本时 |
 
 ## 知识层级关系
 
@@ -58,13 +72,13 @@ practice1/
            ┌───────────────────────┼───────────────────────┐
            ▼                       ▼                       ▼
    ┌───────────────┐     ┌───────────────┐     ┌───────────────┐
-   │   目标仓库/    │     │   参考资料/    │     │   规范模板/    │
+   │   分析仓库/    │     │   参考资料/    │     │   规范模板/    │
    │  源码与文档    │     │  章程与规范    │     │  文档脚手架    │
    └───────┬───────┘     └───────┬───────┘     └───────┬───────┘
            │                     │                     │
            ▼                     ▼                     ▼
    阅读消化源码内容      理解组织治理规则       按模板生成输出
-   (CLI/Provider/Studio)  (九宫格/发布/资产)    (透视/意图/任务)
+   (CLI/Provider/Studio)  (九宫格/发布/资产)    (透视/意图/洞察)
            │                     │                     │
            └─────────────────────┼─────────────────────┘
                                  │
@@ -73,7 +87,8 @@ practice1/
                      │      输出交付物         │
                      │                       │
                      │  项目透视/ 工作意图/    │
-                     │  任务提交/             │
+                     │  工作洞察/ 任务提交/    │
+                     │  输出测试/ 工作路线/    │
                      └───────────────────────┘
 ```
 
@@ -85,7 +100,8 @@ practice1/
 1. 先读 practice1.md       → 了解任务要求与交付标准
 2. 再读 参考资料/          → 理解量潮第二大脑知识体系（九宫格架构）
 3. 浏览 项目透视/          → 建立对三个目标仓库的结构化认知
-4. 深入 目标仓库/          → 逐仓库阅读源码与文档
-5. 按 规范模板/ 输出      → 生成符合格式约定的透视文档与意图文档
-6. 提交至 任务提交/        → 交付物暂存后通过 PR 正式提交
+4. 深入 分析仓库/          → 逐仓库阅读源码与文档
+5. 阅读 工作洞察/          → 学习工程经验与设计原则
+6. 按 规范模板/ 输出      → 生成符合格式约定的透视文档与意图文档
+7. 提交至 任务提交/        → 交付物暂存后通过 PR 正式提交
 ```
