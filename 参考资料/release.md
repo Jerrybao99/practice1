@@ -22,3 +22,5 @@
 
 **第五条 附则**
 本章程由 DevOps 团队负责解释和修订。各项目可制定子章程补充本项目特定的发布规则。
+
+- 链接：https://github.com/quanttide/quanttide-bylaw-of-devops/blob/main/lifecycle/release.md

@@ -65,3 +65,7 @@
 **第十四条** 本资产类型定义由资产治理团队维护和修订。
 
 **第十五条** 任何格子中资产类型的变更须经审议后方可执行，以保证九宫格结构的一致性与完整性。
+
+## 链接
+
+- https://github.com/quanttide/quanttide-bylaw-of-asset-management/blob/main/schema/second-brain.md
