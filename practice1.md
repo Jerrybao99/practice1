@@ -31,6 +31,7 @@
 - 建议实现顺序
 - 更结构化不方便 AI 与人快速处理
 - [ ] 任务书的步骤要交代细一点，父子模块，节约学习时间
+- [ ] 错误首行
 
 
 
@@ -49,3 +50,20 @@
 
 - 不叠加对激励的影响
 - 附加题部分 ddl
+
+
+
+### 来源文档
+
+> 来自 [qtclass/course/vibe-coding/practice1.md](https://github.com/quanttide/quanttide-profile-of-business-entity/blob/main/qtclass/course/vibe-coding/practice1.md#任务2整理工作意图)
+
+### 目标
+
+- 拟定工作意图文档规范，增加 [qtcloud-data](https://github.com/quanttide/qtcloud-data) 和 [qtdata](https://github.com/quanttide/qtdata) 的最新想法
+
+### 方案
+
+- 按如下步骤执行：
+
+1. 根据 qtcloud-data 与 qtdata 仓库现有[工作意图文档的格式和内容]()，结合仓库代码，确定[工作意图文档标准化模板](https://github.com/Jerrybao99/practice1/blob/master/%E8%A7%84%E8%8C%83%E6%A8%A1%E6%9D%BF/intention.md)，该模板可输入给 AI 作为上下文，方便快速标准化输出工作意图文档
+2. 
